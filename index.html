@@ -133,7 +133,7 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a onclick="displayMap()" href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -423,27 +423,6 @@
                             <p></p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-lg-8">
-                        <div id="map" style="width:400px;height:400px"></div>
-
-                        <script>
-                              var map;
-                              function displayMap() {
-                                                 document.getElementById('map').style.display="block";
-                                                 initMap();
-                                             }
-                              function initMap() {
-                                map = new google.maps.Map(document.getElementById('map'), {
-                                  center: {lat: -34.397, lng: 150.644},
-                                  zoom: 8
-                                });
-                              }
-                        </script>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf8leLNSPlCb5x2IbTGdbllXiA7BJkKMA"
-    async defer></script>
                     </div>
                 </div>
             </div>
