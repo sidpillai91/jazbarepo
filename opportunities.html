@@ -61,7 +61,10 @@
             map: map
         });
     }
-
+    $('#btnaddmarker').on('click', function() {
+        var myCenter=new google.maps.LatLng(35.617,139.777);
+        addmarker(latlng);
+    })
     // Testing the addMarker function
     function TestMarker() {
            CentralPark = new google.maps.LatLng(35.617,139.777);
@@ -79,7 +82,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <button type="button" onclick="addMarker()">
+                <button id ="btnaddmarker" type="button" ">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="index.html">Jazba</a>
