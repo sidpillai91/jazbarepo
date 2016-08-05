@@ -43,10 +43,32 @@
       var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
       var marker=new google.maps.Marker({
         position:myCenter,
+        animation:google.maps.Animation.BOUNCE
         });
       marker.setMap(map);
+        google.maps.event.addListener(map, 'bounds_changed', function() {
+            bounds = map.getBounds();
+            ne = bounds.getNorthEast();
+            sw = bounds.getSouthWest();
+            document.getElementById('mapBounds').innerHTML = bounds.toUrlValue(6);
+            TestMarker();
+
+          });
+    }
+    function addMarker(location) {
+        marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    }
+
+    // Testing the addMarker function
+    function TestMarker() {
+           CentralPark = new google.maps.LatLng(35.617,139.777);
+           addMarker(CentralPark);
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+
     </script>
 </head>
 
@@ -77,9 +99,16 @@
                         </div>
                     </div>
                 </div>
-
-    </div></section>
-    
+                <div class="row">
+                                <div class="col-lg-8 col-lg-offset-2 text-center">
+                                    <a href="#" class="btn btn-lg btn-outline">
+                                        <i class="fa fa-download"></i> Download Theme
+                                    </a>
+                                </div>
+                            </div>
+    </div>
+    </section>
+    <div id="mapBounds"></div>
     <div id="googleMap" align="center" style="width:500px;height:380px;margin-left: auto;margin-right: auto;></div>
 
 
